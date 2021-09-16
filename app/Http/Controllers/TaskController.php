@@ -79,7 +79,7 @@ class TaskController extends Controller
             throw new \RuntimeException(sprintf('Failed to create zip archive. (Status code: %s)', $zipStatus));
         }
 
-        $password = 'Password';
+        $password = $user->mobile_no;
         if (!$zip->setPassword($password)) {
             throw new \RuntimeException('Set password failed');
         }
